@@ -47,6 +47,7 @@ public class PublicController {
     @Transactional
     public Object register(@RequestBody @Validated UserManageDTO userManageDTO){
         UserManage userManage = new UserManage(userManageDTO);
+
         UserManage user = userManageService.getOneByUsername(userManage.getUsername());
         if (user != null) {
             return ResponseJson.failure(ResponseCode.USER_HAS_EXISTED);
