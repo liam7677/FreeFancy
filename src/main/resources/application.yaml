@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    password: 1108
+    username: root
+    url: jdbc:mysql://localhost:3306/freefancy?serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.whut.idea.freefancy.entity
+
+logging:
+  pattern:
+    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
+    file: '%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n'
+  file:
+    path: ./logs
+
+swagger:
+  print-init: true
+  enabled: true
+  title: "暇思园(FreeFancy)接口文档"
+  version: 1.0.0
+  base-package: com.whut.idea.freefancy.controller
